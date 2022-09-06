@@ -21,10 +21,16 @@ export class TaskServiceService implements OnInit{
     this.taskList.push(obj);
     localStorage.setItem("TaskList",JSON.stringify(this.taskList));
   }
-  // dummyfunction(){
-    
-  //   // localStorage.setItem("totalCompleted","8");
-  // //   localStorage.setItem("TaskList",JSON.stringify(this.taskList));
+ firstTime(){
+    if(localStorage.getItem("TaskList")==null){
+//       console.log(localStorage.getItem("TaskList"));
+
+      this.taskList=[];
+      localStorage.setItem("TotalTask","0");
+      localStorage.setItem("TaskList",JSON.stringify(this.taskList));
+      localStorage.setItem("totalCompleted","0");
+      
+    }
   // //   console.log("dammyfunctiontrigared");
-  // }
+  }
 }
