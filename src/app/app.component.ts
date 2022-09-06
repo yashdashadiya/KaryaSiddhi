@@ -18,6 +18,7 @@ export class AppComponent {
   // private _subscription: any;
   constructor(private SideBarStatusService:SideBarStatusService,TaskService:TaskServiceService){
     // TaskService.dummyfunction();
+    TaskService.firstTime();
     this.sideBarStatus=this.SideBarStatusService.sideBarStatus;
     this.subscription = SideBarStatusService.statusChange.subscribe((value: boolean | undefined) => {this.sideBarStatus = value;});
 
